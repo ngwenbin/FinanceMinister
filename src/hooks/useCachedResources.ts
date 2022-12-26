@@ -1,4 +1,4 @@
-import { FontAwesome } from "@expo/vector-icons";
+import MaterialIcons from "@expo/vector-icons/MaterialIcons";
 import * as SplashScreen from "expo-splash-screen";
 import { useEffect, useState } from "react";
 import {
@@ -16,7 +16,7 @@ import {
 
 SplashScreen.preventAutoHideAsync();
 
-export default function useCachedResources() {
+const useCachedResources = () => {
   const [isLoadingComplete, setLoadingComplete] = useState(false);
   let [fontsLoaded] = useFonts({
     Inter_100Thin,
@@ -28,7 +28,7 @@ export default function useCachedResources() {
     Inter_700Bold,
     Inter_800ExtraBold,
     Inter_900Black,
-    ...FontAwesome.font,
+    ...MaterialIcons.font,
   });
 
   // Load any resources or data that we need prior to rendering the app
@@ -44,4 +44,6 @@ export default function useCachedResources() {
   }, [fontsLoaded]);
 
   return isLoadingComplete;
-}
+};
+
+export default useCachedResources;

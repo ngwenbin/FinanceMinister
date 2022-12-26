@@ -1,34 +1,28 @@
-/**
- * Learn more about deep linking with React Navigation
- * https://reactnavigation.org/docs/deep-linking
- * https://reactnavigation.org/docs/configuring-links
- */
-
 import { LinkingOptions } from "@react-navigation/native";
 import * as Linking from "expo-linking";
 
-import { RootStackParamList } from "../customTypes/global";
+import { RootStackParamList } from "../customTypes/navigation";
 
 const linking: LinkingOptions<RootStackParamList> = {
   prefixes: [Linking.createURL("/")],
   config: {
     screens: {
-      Root: {
+      root: {
         screens: {
-          TabOne: {
+          home: {
             screens: {
-              TabOneScreen: "one",
+              homeScreen: "home",
             },
           },
-          TabTwo: {
+          expenses: {
             screens: {
-              TabTwoScreen: "two",
+              expensesScreen: "expenses",
             },
           },
         },
       },
-      Modal: "modal",
-      NotFound: "*",
+      modal: "modal",
+      notFound: "*",
     },
   },
 };

@@ -2,13 +2,13 @@ import { StyleSheet } from "react-native";
 
 import EditScreenInfo from "../components/EditScreenInfo";
 import { Text, View } from "../components/Themed";
-import type { RootTabScreenProps } from "@customTypes/global";
+import type { RootTabScreenProps } from "@customTypes/navigation";
 import { getFont } from "@utils";
 
-export default function TabOneScreen({
+const HomeScreen = ({
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   navigation,
-}: RootTabScreenProps<"TabOne">) {
+}: RootTabScreenProps<"home">) => {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Tab One</Text>
@@ -20,7 +20,7 @@ export default function TabOneScreen({
       <EditScreenInfo path="/screens/TabOneScreen.tsx" />
     </View>
   );
-}
+};
 
 const styles = StyleSheet.create({
   container: {
@@ -37,3 +37,5 @@ const styles = StyleSheet.create({
     width: "80%",
   },
 });
+
+export default HomeScreen;

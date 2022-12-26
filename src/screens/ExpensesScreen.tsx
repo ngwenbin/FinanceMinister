@@ -3,7 +3,7 @@ import { StyleSheet } from "react-native";
 import EditScreenInfo from "../components/EditScreenInfo";
 import { Text, View } from "../components/Themed";
 
-export default function TabTwoScreen() {
+const ExpensesScreen = () => {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Tab Two</Text>
@@ -15,7 +15,7 @@ export default function TabTwoScreen() {
       <EditScreenInfo path="/screens/TabTwoScreen.tsx" />
     </View>
   );
-}
+};
 
 const styles = StyleSheet.create({
   container: {
@@ -33,3 +33,5 @@ const styles = StyleSheet.create({
     width: "80%",
   },
 });
+
+export default ExpensesScreen;
