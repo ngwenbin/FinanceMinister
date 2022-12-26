@@ -4,7 +4,8 @@ import { NavigationContainer, DefaultTheme } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import * as React from "react";
 
-// import Colors from "@constants/Colors";
+import { Colors } from "@constants/Colors";
+
 import {
   HomeScreen,
   ExpensesScreen,
@@ -16,6 +17,7 @@ import {
 } from "@screens/index";
 import { RootStackParamList, RootTabParamList } from "@customTypes/navigation";
 import LinkingConfiguration from "./LinkingConfiguration";
+import { getFont } from "@utils";
 
 const Navigation = () => {
   return (
@@ -49,12 +51,31 @@ const RootNavigator = () => {
 
 const BottomTab = createBottomTabNavigator<RootTabParamList>();
 
+const TabBarIcon = (
+  name: React.ComponentProps<typeof MaterialIcons>["name"],
+  color: string
+): JSX.Element => {
+  return (
+    <MaterialIcons
+      size={24}
+      style={{ marginBottom: -6 }}
+      name={name}
+      color={color}
+    />
+  );
+};
+
 const BottomTabNavigator = () => {
   return (
     <BottomTab.Navigator
       initialRouteName="home"
       screenOptions={{
-        tabBarActiveTintColor: "2f95dc",
+        headerShown: false,
+        tabBarActiveTintColor: Colors.gray[800],
+        tabBarInactiveTintColor: Colors.gray[400],
+        tabBarLabelStyle: {
+          ...getFont("medium", "2xs"),
+        },
       }}
     >
       <BottomTab.Screen
@@ -62,7 +83,7 @@ const BottomTabNavigator = () => {
         component={HomeScreen}
         options={() => ({
           title: "Home",
-          tabBarIcon: ({ color }) => <TabBarIcon name="home" color={color} />,
+          tabBarIcon: ({ color }) => TabBarIcon("home", color),
         })}
       />
       <BottomTab.Screen
@@ -70,9 +91,7 @@ const BottomTabNavigator = () => {
         component={ExpensesScreen}
         options={{
           title: "Expenses",
-          tabBarIcon: ({ color }) => (
-            <TabBarIcon name="article" color={color} />
-          ),
+          tabBarIcon: ({ color }) => TabBarIcon("article", color),
         }}
       />
       <BottomTab.Screen
@@ -80,9 +99,11 @@ const BottomTabNavigator = () => {
         component={AddExpenseScreen}
         options={{
           title: "Add Expense",
-          tabBarIcon: ({ color }) => (
-            <TabBarIcon name="add-box" color={color} />
-          ),
+          tabBarIcon: () => TabBarIcon("add-box", Colors.primary[500]),
+          tabBarLabelStyle: {
+            color: Colors.primary[500],
+            ...getFont("medium", "2xs"),
+          },
         }}
       />
       <BottomTab.Screen
@@ -90,9 +111,7 @@ const BottomTabNavigator = () => {
         component={AnalyticsScreen}
         options={{
           title: "Analytics",
-          tabBarIcon: ({ color }) => (
-            <TabBarIcon name="trending-up" color={color} />
-          ),
+          tabBarIcon: ({ color }) => TabBarIcon("trending-up", color),
         }}
       />
       <BottomTab.Screen
@@ -100,18 +119,11 @@ const BottomTabNavigator = () => {
         component={ProfileScreen}
         options={{
           title: "Profile",
-          tabBarIcon: ({ color }) => <TabBarIcon name="person" color={color} />,
+          tabBarIcon: ({ color }) => TabBarIcon("person", color),
         }}
       />
     </BottomTab.Navigator>
   );
-};
-
-const TabBarIcon = (props: {
-  name: React.ComponentProps<typeof MaterialIcons>["name"];
-  color: string;
-}) => {
-  return <MaterialIcons size={24} {...props} />;
 };
 
 export default Navigation;
