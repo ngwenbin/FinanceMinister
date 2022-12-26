@@ -1,13 +1,15 @@
 {
   "name": "finance-minister",
   "version": "1.0.0",
-  "main": "node_modules/expo/AppEntry.js",
+  "main": "src/App.tsx",
   "scripts": {
     "start": "expo start",
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web",
-    "test": "jest --watchAll"
+    "test": "jest --watchAll",
+    "lint": "eslint src/**/* --ext .js,.jsx,.ts,.tsx",
+    "typecheck" : "tsc --noEmit --skipLibCheck"
   },
   "jest": {
     "preset": "jest-expo"
