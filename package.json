@@ -9,7 +9,7 @@
     "web": "expo start --web",
     "test": "jest --watchAll",
     "lint": "eslint src/**/* --ext .js,.jsx,.ts,.tsx",
-    "typecheck" : "tsc --noEmit --skipLibCheck"
+    "typecheck": "tsc --noEmit --skipLibCheck"
   },
   "jest": {
     "preset": "jest-expo"
@@ -44,11 +44,20 @@
     "@typescript-eslint/parser": "^5.47.0",
     "eslint": "^8.30.0",
     "eslint-config-prettier": "^8.5.0",
+    "husky": "^8.0.2",
     "jest": "^26.6.3",
     "jest-expo": "~47.0.1",
+    "lint-staged": "^13.1.0",
     "prettier": "^2.8.1",
     "react-test-renderer": "18.1.0",
     "typescript": "^4.6.3"
+  },
+  "lint-staged":{
+    "**/*.{js,jsx,ts,tsx}":[
+      "yarn typecheck",
+      "yarn lint",
+      "prettier --write"
+    ]
   },
   "private": true
 }
