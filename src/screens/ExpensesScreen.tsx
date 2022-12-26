@@ -1,6 +1,5 @@
 import { StyleSheet } from "react-native";
 
-import EditScreenInfo from "../components/EditScreenInfo";
 import { Text, View } from "../components/Themed";
 
 const ExpensesScreen = () => {
@@ -12,7 +11,7 @@ const ExpensesScreen = () => {
         lightColor="#eee"
         darkColor="rgba(255,255,255,0.1)"
       />
-      <EditScreenInfo path="/screens/TabTwoScreen.tsx" />
+      <Text>Expenses</Text>
     </View>
   );
 };

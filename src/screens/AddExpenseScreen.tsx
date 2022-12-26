@@ -1,22 +1,17 @@
 import { StyleSheet } from "react-native";
 
 import { Text, View } from "../components/Themed";
-import type { RootTabScreenProps } from "@customTypes/navigation";
-import { getFont } from "@utils";
 
-const HomeScreen = ({
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  navigation,
-}: RootTabScreenProps<"home">) => {
+const AddExpenseScreen = () => {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Tab One</Text>
+      <Text style={styles.title}>Tab Two</Text>
       <View
         style={styles.separator}
         lightColor="#eee"
         darkColor="rgba(255,255,255,0.1)"
       />
-      <Text>Home</Text>
+      <Text>Add Expense</Text>
     </View>
   );
 };
@@ -28,7 +23,8 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   title: {
-    ...getFont("regular", "md"),
+    fontSize: 20,
+    fontWeight: "bold",
   },
   separator: {
     marginVertical: 30,
@@ -37,4 +33,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default HomeScreen;
+export default AddExpenseScreen;

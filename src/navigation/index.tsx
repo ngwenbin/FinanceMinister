@@ -10,6 +10,9 @@ import {
   ExpensesScreen,
   NotFoundScreen,
   ModalScreen,
+  ProfileScreen,
+  AnalyticsScreen,
+  AddExpenseScreen,
 } from "@screens/index";
 import { RootStackParamList, RootTabParamList } from "@customTypes/navigation";
 import LinkingConfiguration from "./LinkingConfiguration";
@@ -67,7 +70,37 @@ const BottomTabNavigator = () => {
         component={ExpensesScreen}
         options={{
           title: "Expenses",
-          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
+          tabBarIcon: ({ color }) => (
+            <TabBarIcon name="article" color={color} />
+          ),
+        }}
+      />
+      <BottomTab.Screen
+        name="addExpense"
+        component={AddExpenseScreen}
+        options={{
+          title: "Add Expense",
+          tabBarIcon: ({ color }) => (
+            <TabBarIcon name="add-box" color={color} />
+          ),
+        }}
+      />
+      <BottomTab.Screen
+        name="analytics"
+        component={AnalyticsScreen}
+        options={{
+          title: "Analytics",
+          tabBarIcon: ({ color }) => (
+            <TabBarIcon name="trending-up" color={color} />
+          ),
+        }}
+      />
+      <BottomTab.Screen
+        name="profile"
+        component={ProfileScreen}
+        options={{
+          title: "Profile",
+          tabBarIcon: ({ color }) => <TabBarIcon name="person" color={color} />,
         }}
       />
     </BottomTab.Navigator>

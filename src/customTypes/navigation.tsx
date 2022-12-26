@@ -20,7 +20,7 @@ export type RootStackParamList = {
 export type RootTabParamList = {
   home: undefined;
   expenses: undefined;
-  addExpenses: undefined;
+  addExpense: undefined;
   analytics: undefined;
   profile: undefined;
 };
