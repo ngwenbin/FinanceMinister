@@ -4,7 +4,19 @@
     "strict": true,
     "module": "es6",
     "jsx": "react-jsx",
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@*": ["src/*"],
+      "@assets": ["src/assets/*"],
+      "@components": ["src/components/*"],
+      "@constants/*": ["src/constants/*"],
+      "@customTypes/*": ["src/customTypes/*"],
+      "@hooks": ["src/hooks/*"],
+      "@navigation": ["src/navigation/*"],
+      "@screens": ["src/screens/*"],
+      "@utils/*": ["src/utils/*"]
+    }
   },
   "include": ["src/**/*"],
   "exclude": ["node_modules"]

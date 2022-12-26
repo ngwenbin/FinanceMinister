@@ -1,33 +1,47 @@
 import { FontAwesome } from "@expo/vector-icons";
-import * as Font from "expo-font";
 import * as SplashScreen from "expo-splash-screen";
 import { useEffect, useState } from "react";
+import {
+  useFonts,
+  Inter_100Thin,
+  Inter_200ExtraLight,
+  Inter_300Light,
+  Inter_400Regular,
+  Inter_500Medium,
+  Inter_600SemiBold,
+  Inter_700Bold,
+  Inter_800ExtraBold,
+  Inter_900Black,
+} from "@expo-google-fonts/inter";
+
+SplashScreen.preventAutoHideAsync();
 
 export default function useCachedResources() {
   const [isLoadingComplete, setLoadingComplete] = useState(false);
+  let [fontsLoaded] = useFonts({
+    Inter_100Thin,
+    Inter_200ExtraLight,
+    Inter_300Light,
+    Inter_400Regular,
+    Inter_500Medium,
+    Inter_600SemiBold,
+    Inter_700Bold,
+    Inter_800ExtraBold,
+    Inter_900Black,
+    ...FontAwesome.font,
+  });
 
   // Load any resources or data that we need prior to rendering the app
   useEffect(() => {
     async function loadResourcesAndDataAsync() {
-      try {
-        SplashScreen.preventAutoHideAsync();
-
-        // Load fonts
-        await Font.loadAsync({
-          ...FontAwesome.font,
-          "space-mono": require("../../assets/fonts/SpaceMono-Regular.ttf"),
-        });
-      } catch (e) {
-        // We might want to provide this error information to an error reporting service
-        console.warn(e);
-      } finally {
+      if (fontsLoaded) {
+        await SplashScreen.hideAsync();
         setLoadingComplete(true);
-        SplashScreen.hideAsync();
       }
     }
 
     loadResourcesAndDataAsync();
-  }, []);
+  }, [fontsLoaded]);
 
   return isLoadingComplete;
 }

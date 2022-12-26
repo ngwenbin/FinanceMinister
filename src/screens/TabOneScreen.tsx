@@ -2,7 +2,8 @@ import { StyleSheet } from "react-native";
 
 import EditScreenInfo from "../components/EditScreenInfo";
 import { Text, View } from "../components/Themed";
-import { RootTabScreenProps } from "../../types";
+import type { RootTabScreenProps } from "@customTypes/global";
+import { getFont } from "@utils";
 
 export default function TabOneScreen({
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -28,8 +29,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   title: {
-    fontSize: 20,
-    fontWeight: "bold",
+    ...getFont("regular", "md"),
   },
   separator: {
     marginVertical: 30,
