@@ -11,12 +11,6 @@
     "lint": "eslint --ext .js,.jsx,.ts,.tsx src",
     "typecheck": "tsc --noEmit --skipLibCheck"
   },
-  "jest": {
-    "preset": "jest-expo",
-    "transformIgnorePatterns": [
-      "node_modules/(?!((jest-)?react-native|@react-native(-community)?)|expo(nent)?|@expo(nent)?/.*|@expo-google-fonts/.*|react-navigation|@react-navigation/.*|@unimodules/.*|unimodules|sentry-expo|native-base|react-native-svg)"
-    ]
-  },
   "dependencies": {
     "@expo-google-fonts/inter": "^0.2.2",
     "@expo/vector-icons": "^13.0.0",
@@ -43,8 +37,12 @@
   "devDependencies": {
     "@babel/core": "^7.12.9",
     "@react-native-community/eslint-config": "^3.2.0",
+    "@testing-library/jest-native": "^5.3.3",
+    "@testing-library/react-native": "^11.5.0",
+    "@types/jest": "^29.2.4",
     "@types/react": "~18.0.24",
     "@types/react-native": "~0.70.6",
+    "@types/react-test-renderer": "^18.0.0",
     "@typescript-eslint/eslint-plugin": "^5.47.0",
     "@typescript-eslint/parser": "^5.47.0",
     "babel-plugin-module-resolver": "^4.1.0",

@@ -1,5 +1,6 @@
 import { Text, Pressable, View, ViewStyle } from "react-native";
 import { buttonStyles as styles } from "./Button.style";
+import { testIds } from "@utils/tests/testIds";
 
 type ButtonSizes = "xs" | "sm" | "md" | "lg";
 type ButtonVariant = "solid" | "outline" | "white";
@@ -44,6 +45,7 @@ const Button = ({
     >
       {title ? (
         <Text
+          testID={testIds.sharedComponents.button.buttonTitle}
           style={[
             {
               color: styles[variant].color,
@@ -60,6 +62,7 @@ const Button = ({
       ) : null}
       {adornment ? (
         <View
+          testID={testIds.sharedComponents.button.buttonAdornmentContainer}
           style={{
             [adornmentPosition === "left" ? "paddingRight" : "paddingLeft"]:
               styles[size]._flexGap,
