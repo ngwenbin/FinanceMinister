@@ -8,7 +8,8 @@ interface ButtonProps {
   adornment?: JSX.Element;
   adornmentPosition?: "left" | "right";
   containerStyle?: ViewStyle;
-  label?: string;
+  disabled?: boolean;
+  title?: string;
   size?: ButtonSizes;
   variant?: ButtonVariant;
   onPressCallback?: () => void;
@@ -19,7 +20,8 @@ const Button = ({
   adornment,
   adornmentPosition,
   containerStyle,
-  label,
+  disabled,
+  title,
   size = "sm",
   variant = "solid",
   onPressCallback,
@@ -33,20 +35,27 @@ const Button = ({
         styles[variant],
         { flexDirection: adornmentPosition === "left" ? "row-reverse" : "row" },
         { ...(pressed ? styles[variant]._after : styles[variant]._before) },
+        { ...(disabled && styles[variant]._disabled) },
         containerStyle,
       ]}
+      disabled={disabled}
       onPress={onPressCallback}
       onLongPress={onLongPressCallback}
     >
-      {label ? (
+      {title ? (
         <Text
-          style={{
-            color: styles[variant].color,
-            fontFamily: styles[size].fontFamily,
-            fontSize: styles[size].fontSize,
-          }}
+          style={[
+            {
+              color: styles[variant].color,
+              fontFamily: styles[size].fontFamily,
+              fontSize: styles[size].fontSize,
+            },
+            {
+              ...(disabled && styles[variant]._disabled),
+            },
+          ]}
         >
-          {label}
+          {title}
         </Text>
       ) : null}
       {adornment ? (

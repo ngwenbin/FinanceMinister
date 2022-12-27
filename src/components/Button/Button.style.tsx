@@ -45,6 +45,9 @@ export const buttonStyles = StyleSheet.create({
     _after: {
       backgroundColor: Colors.primary[700],
     },
+    _disabled: {
+      backgroundColor: Colors.primary[200],
+    },
   },
   outline: {
     borderStyle: "solid",
@@ -56,6 +59,10 @@ export const buttonStyles = StyleSheet.create({
     _after: {
       borderColor: Colors.primary[500],
     },
+    _disabled: {
+      color: Colors.primary[200],
+      borderColor: Colors.primary[100],
+    },
   },
   white: {
     borderStyle: "solid",
@@ -66,6 +73,11 @@ export const buttonStyles = StyleSheet.create({
     },
     _after: {
       borderColor: Colors.gray[300],
+    },
+    _disabled: {
+      color: Colors.gray[400],
+      backgroundColor: Colors.gray[100],
+      borderColor: Colors.gray[100],
     },
   },
 });
