@@ -1,0 +1,72 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Button> as default Renders correctly 1`] = `
+<View
+  accessible={true}
+  collapsable={false}
+  focusable={true}
+  onBlur={[Function]}
+  onClick={[Function]}
+  onFocus={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "display": "flex",
+        "justifyContent": "center",
+      },
+      Object {
+        "_flexGap": 8,
+        "borderRadius": 6,
+        "fontFamily": "Inter_500Medium",
+        "fontSize": 14,
+        "paddingHorizontal": 16,
+        "paddingVertical": 8,
+      },
+      Object {
+        "_after": Object {
+          "backgroundColor": "#022CB3",
+        },
+        "_before": Object {
+          "backgroundColor": "#054EFA",
+        },
+        "_disabled": Object {
+          "backgroundColor": "#9AC1FE",
+        },
+        "backgroundColor": "#054EFA",
+        "color": "#FFFFFF",
+      },
+      Object {
+        "flexDirection": "row",
+      },
+      Object {
+        "backgroundColor": "#054EFA",
+      },
+      Object {},
+      undefined,
+    ]
+  }
+>
+  <Text
+    style={
+      Array [
+        Object {
+          "color": "#FFFFFF",
+          "fontFamily": "Inter_500Medium",
+          "fontSize": 14,
+        },
+        Object {},
+      ]
+    }
+    testID="button-0"
+  >
+    Test button
+  </Text>
+</View>
+`;
