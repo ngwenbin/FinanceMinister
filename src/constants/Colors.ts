@@ -2,6 +2,7 @@ const primary = {
   100: "#CCE1FE",
   200: "#9AC1FE",
   500: "#054EFA",
+  700: "#022CB3",
   800: "#011F90",
 };
 
@@ -64,4 +65,6 @@ export const Colors = {
   warning,
   success,
   info,
+  white: "#FFFFFF",
+  black: "#000000",
 };
