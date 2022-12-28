@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Button> as default Renders correctly 1`] = `
+<Text
+  style={
+    Array [
+      Object {
+        "color": undefined,
+      },
+      Object {
+        "fontFamily": "Inter_400Regular",
+        "fontSize": 12,
+      },
+      Object {},
+    ]
+  }
+  testID="text-0"
+>
+  This is a text
+</Text>
+`;

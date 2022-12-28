@@ -15,6 +15,7 @@ module.exports = function (api) {
             "@navigation": "./src/navigation",
             "@screens": "./src/screens",
             "@utils": "./src/utils",
+            "@typings": "./src/typings",
           },
           extensions: [".js", ".jsx", ".ts", ".tsx"],
         },
