@@ -25,7 +25,7 @@ describe("<Button>", () => {
       expect(screen.getByTestId(textTestId)).toHaveTextContent(textContent);
     });
 
-    test("Outputs the correct text", () => {
+    test("Outputs the correct text color", () => {
       render(<Text color={Colors.primary[500]}>{textContent}</Text>);
       expect(screen.getByTestId(textTestId)).toHaveStyle({
         color: Colors.primary[500],
