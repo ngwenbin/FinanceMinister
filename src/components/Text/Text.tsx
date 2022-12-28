@@ -24,8 +24,9 @@ const Text = ({
 
   return (
     <DefaultText
+      {...props}
       testID={testIds.sharedComponents.text}
-      style={[{ color }, getFont(variation, size, customStyle), props]}
+      style={[{ color }, getFont(variation, size, customStyle), props.style]}
     >
       {children}
     </DefaultText>

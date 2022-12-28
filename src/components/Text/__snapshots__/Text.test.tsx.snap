@@ -11,7 +11,7 @@ exports[`<Text> as default Renders correctly 1`] = `
         "fontFamily": "Inter_400Regular",
         "fontSize": 12,
       },
-      Object {},
+      undefined,
     ]
   }
   testID="text-0"
