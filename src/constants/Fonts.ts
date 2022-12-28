@@ -21,19 +21,19 @@ export enum FontWeight {
   "extrabold" = "Inter_800ExtraBold",
 }
 
-type CustomTextStyleProps = Record<
-  string,
+type CustomTextStyleProps<T extends string> = Record<
+  T,
   TupleToObjectInheritKeyNames<Parameters<typeof getFont>, GetFontPropKeys>
 >;
 
-const textHeadings: CustomTextStyleProps = {
+const textHeadings: CustomTextStyleProps<"h3"> = {
   h3: {
     variation: "semibold",
     size: "lg",
   },
 };
 
-const textDisplays: CustomTextStyleProps = {
+const textDisplays: CustomTextStyleProps<"display-small" | "display-large"> = {
   "display-small": {
     variation: "semibold",
     size: "md",
@@ -44,25 +44,29 @@ const textDisplays: CustomTextStyleProps = {
   },
 };
 
-const textSubHeadings: CustomTextStyleProps = {
+const textSubHeadings: CustomTextStyleProps<"subhead-small"> = {
   "subhead-small": {
     variation: "medium",
     size: "xs",
   },
 };
 
-const textBody: CustomTextStyleProps = {
+const textBody: CustomTextStyleProps<"body-regular"> = {
   "body-regular": {
     variation: "regular",
     size: "xs",
   },
 };
 
-export const TextVariantsData: CustomTextStyleProps = {
+const textOther: CustomTextStyleProps<"caption"> = {
   caption: {
     variation: "regular",
     size: "2xs",
   },
+};
+
+export const TextVariantsData = {
+  ...textOther,
   ...textDisplays,
   ...textHeadings,
   ...textSubHeadings,
