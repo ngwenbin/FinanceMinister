@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Button> as default Renders correctly 1`] = `
+exports[`<Text> as default Renders correctly 1`] = `
 <Text
   style={
     Array [
