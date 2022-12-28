@@ -15,7 +15,7 @@ import {
   AnalyticsScreen,
   AddExpenseScreen,
 } from "@screens/index";
-import { RootStackParamList, RootTabParamList } from "@customTypes/navigation";
+import { RootStackParamList, RootTabParamList } from "@typings/navigation";
 import LinkingConfiguration from "./LinkingConfiguration";
 import { getFont } from "@utils";
 

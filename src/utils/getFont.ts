@@ -1,5 +1,5 @@
 import { FontSize, FontWeight } from "@constants/Fonts";
-import { AllFontSizes, AllFontVariations } from "../types/fonts";
+import { AllFontSizes, AllFontVariations } from "@typings/fonts";
 import { TextStyle } from "react-native";
 
 export type GetFontPropKeys = ["variation", "size", "customStyle"];
