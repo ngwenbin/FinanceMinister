@@ -8,7 +8,7 @@ import { Colors } from "@constants/Colors";
 const textContent = "This is a text";
 const textTestId = testIds.sharedComponents.text;
 
-describe("<Button>", () => {
+describe("<Text>", () => {
   describe("as default", () => {
     test("Renders successfully", () => {
       const activeText = render(<Text>{textContent}</Text>);

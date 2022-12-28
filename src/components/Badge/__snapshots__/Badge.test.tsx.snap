@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Badge> as default Renders correctly 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "#DDEFFE",
+      "borderRadius": 12,
+      "paddingHorizontal": 8,
+      "paddingVertical": 4,
+    }
+  }
+  testID="badge-0"
+>
+  <Text
+    style={
+      Object {
+        "color": "#2C56B3",
+        "fontFamily": "Inter_500Medium",
+        "fontSize": 12,
+      }
+    }
+    testID="badge-1"
+  >
+    This is a text
+  </Text>
+</View>
+`;
