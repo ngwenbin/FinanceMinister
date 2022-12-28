@@ -13,6 +13,8 @@ import {
   Inter_800ExtraBold,
   Inter_900Black,
 } from "@expo-google-fonts/inter";
+import * as NavigationBar from "expo-navigation-bar";
+import { Platform } from "react-native";
 
 SplashScreen.preventAutoHideAsync();
 
@@ -35,11 +37,13 @@ const useCachedResources = () => {
   useEffect(() => {
     async function loadResourcesAndDataAsync() {
       if (fontsLoaded) {
+        if (Platform.OS === "android") {
+          await NavigationBar.setBackgroundColorAsync("white");
+        }
         await SplashScreen.hideAsync();
         setLoadingComplete(true);
       }
     }
-
     loadResourcesAndDataAsync();
   }, [fontsLoaded]);
 
