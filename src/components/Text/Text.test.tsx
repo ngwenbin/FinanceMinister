@@ -31,5 +31,12 @@ describe("<Text>", () => {
         color: Colors.primary[500],
       });
     });
+
+    test("Outputs the correct custom text style", () => {
+      render(<Text style={{ color: Colors.primary[100] }}>{textContent}</Text>);
+      expect(screen.getByTestId(textTestId)).toHaveStyle({
+        color: Colors.primary[100],
+      });
+    });
   });
 });
