@@ -4,5 +4,6 @@ export const testIds = {
       buttonTitle: "button-0",
       buttonAdornmentContainer: "button-1",
     },
+    text: "text-0",
   },
 };
