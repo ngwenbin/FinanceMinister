@@ -1,0 +1,89 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<TextInput> as default Renders correctly 1`] = `
+<View
+  style={
+    Object {
+      "margin": 4,
+      "maxWidth": 320,
+      "width": "100%",
+    }
+  }
+>
+  <Text
+    style={
+      Array [
+        Object {
+          "color": "#111827",
+        },
+        Object {
+          "fontFamily": "Inter_400Regular",
+          "fontSize": 14,
+        },
+        Array [
+          Object {
+            "color": "#111827",
+          },
+          undefined,
+        ],
+      ]
+    }
+    testID="textinput-0"
+  >
+    This is a text label
+  </Text>
+  <TextInput
+    cursorColor="#374151"
+    multiline={false}
+    onBlur={[Function]}
+    onFocus={[Function]}
+    style={
+      Array [
+        Object {
+          "fontFamily": "Inter_400Regular",
+          "fontSize": 14,
+        },
+        Object {
+          "borderColor": "#D1D5DB",
+        },
+        Object {
+          "borderRadius": 8,
+          "borderWidth": 1,
+          "marginBottom": 2,
+          "marginTop": 6,
+          "paddingHorizontal": 16,
+          "paddingVertical": 10,
+        },
+        undefined,
+      ]
+    }
+    testID="textinput-2"
+  />
+  <Text
+    style={
+      Array [
+        Object {
+          "color": "#111827",
+        },
+        Object {
+          "fontFamily": "Inter_400Regular",
+          "fontSize": 12,
+        },
+        Array [
+          Object {
+            "fontFamily": "Inter_300Light",
+            "fontSize": 12,
+          },
+          Object {
+            "color": "#6B7280",
+          },
+          undefined,
+        ],
+      ]
+    }
+    testID="textinput-3"
+  >
+    This is a subtext
+  </Text>
+</View>
+`;
