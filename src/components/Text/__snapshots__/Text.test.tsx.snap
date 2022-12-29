@@ -5,7 +5,7 @@ exports[`<Text> as default Renders correctly 1`] = `
   style={
     Array [
       Object {
-        "color": undefined,
+        "color": "#111827",
       },
       Object {
         "fontFamily": "Inter_400Regular",

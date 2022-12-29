@@ -9,5 +9,11 @@ export const testIds = {
       badgeContainer: "badge-0",
       badgeLabel: "badge-1",
     },
+    textInput: {
+      label: "textinput-0",
+      labelAdornment: "textinput-1",
+      input: "textinput-2",
+      subtext: "textinput-3",
+    },
   },
 };

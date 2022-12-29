@@ -17,11 +17,19 @@ import {
 } from "@screens/index";
 import { RootStackParamList, RootTabParamList } from "@typings/navigation";
 import LinkingConfiguration from "./LinkingConfiguration";
-import { getFont } from "@utils";
+import { getFont, normalize } from "@utils";
+
+const CustomTheme = {
+  ...DefaultTheme,
+  colors: {
+    ...DefaultTheme.colors,
+    background: Colors.white,
+  },
+};
 
 const Navigation = () => {
   return (
-    <NavigationContainer linking={LinkingConfiguration} theme={DefaultTheme}>
+    <NavigationContainer linking={LinkingConfiguration} theme={CustomTheme}>
       <RootNavigator />
     </NavigationContainer>
   );
@@ -55,14 +63,7 @@ const TabBarIcon = (
   name: React.ComponentProps<typeof MaterialIcons>["name"],
   color: string
 ): JSX.Element => {
-  return (
-    <MaterialIcons
-      size={24}
-      style={{ marginBottom: -6 }}
-      name={name}
-      color={color}
-    />
-  );
+  return <MaterialIcons size={normalize(24)} name={name} color={color} />;
 };
 
 const BottomTabNavigator = () => {
@@ -70,11 +71,15 @@ const BottomTabNavigator = () => {
     <BottomTab.Navigator
       initialRouteName="home"
       screenOptions={{
+        tabBarHideOnKeyboard: true,
         headerShown: false,
         tabBarActiveTintColor: Colors.gray[800],
         tabBarInactiveTintColor: Colors.gray[400],
         tabBarLabelStyle: {
           ...getFont("medium", "2xs"),
+        },
+        tabBarStyle: {
+          padding: normalize(4),
         },
       }}
     >
