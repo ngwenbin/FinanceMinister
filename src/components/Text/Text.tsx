@@ -7,6 +7,7 @@ import type { TextVariants } from "@constants/Fonts";
 import { TextVariantsData } from "@constants/Fonts";
 import { getFont } from "@utils";
 import { testIds } from "@utils/tests/testIds";
+import { Colors } from "@constants/Colors";
 
 interface TextProps extends DefaultTextProps {
   children: React.ReactNode;
@@ -16,7 +17,7 @@ interface TextProps extends DefaultTextProps {
 
 const Text = ({
   children,
-  color,
+  color = Colors.gray[900],
   variant = "body-regular",
   ...props
 }: TextProps) => {
@@ -24,8 +25,8 @@ const Text = ({
 
   return (
     <DefaultText
-      {...props}
       testID={testIds.sharedComponents.text}
+      {...props}
       style={[{ color }, getFont(variation, size, customStyle), props.style]}
     >
       {children}
