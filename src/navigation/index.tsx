@@ -63,7 +63,7 @@ const TabBarIcon = (
   name: React.ComponentProps<typeof MaterialIcons>["name"],
   color: string
 ): JSX.Element => {
-  return <MaterialIcons size={normalize(24)} name={name} color={color} />;
+  return <MaterialIcons size={normalize(20)} name={name} color={color} />;
 };
 
 const BottomTabNavigator = () => {

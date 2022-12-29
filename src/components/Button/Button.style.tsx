@@ -1,6 +1,6 @@
 import { StyleSheet } from "react-native";
 import { Colors } from "@constants/Colors";
-import { getFont } from "@utils";
+import { getFont, normalize } from "@utils";
 
 export const buttonStyles = StyleSheet.create({
   buttonContainer: {
@@ -9,31 +9,31 @@ export const buttonStyles = StyleSheet.create({
     justifyContent: "center",
   },
   xs: {
-    paddingHorizontal: 11,
-    paddingVertical: 7,
-    borderRadius: 6,
-    _flexGap: 4,
+    paddingHorizontal: normalize(11),
+    paddingVertical: normalize(7),
+    borderRadius: normalize(6),
+    _flexGap: normalize(4),
     ...getFont("medium", "xs"),
   },
   sm: {
-    paddingHorizontal: 16,
-    paddingVertical: 8,
-    borderRadius: 6,
-    _flexGap: 8,
+    paddingHorizontal: normalize(16),
+    paddingVertical: normalize(8),
+    borderRadius: normalize(6),
+    _flexGap: normalize(8),
     ...getFont("medium", "sm"),
   },
   md: {
-    paddingHorizontal: 18,
-    paddingVertical: 8,
-    borderRadius: 8,
-    _flexGap: 8,
+    paddingHorizontal: normalize(18),
+    paddingVertical: normalize(8),
+    borderRadius: normalize(8),
+    _flexGap: normalize(8),
     ...getFont("medium", "md"),
   },
   lg: {
-    paddingHorizontal: 20,
-    paddingVertical: 9,
-    borderRadius: 8,
-    _flexGap: 8,
+    paddingHorizontal: normalize(20),
+    paddingVertical: normalize(9),
+    borderRadius: normalize(8),
+    _flexGap: normalize(8),
     ...getFont("medium", "lg"),
   },
   solid: {

@@ -1,7 +1,8 @@
-import { View, StyleSheet, TouchableOpacity } from "react-native";
+import { View, TouchableOpacity } from "react-native";
 
 import { Text } from "@components/Text";
 import { RootStackScreenProps } from "../typings/navigation";
+import { scaledStylesheet } from "@utils";
 
 const NotFoundScreen = ({ navigation }: RootStackScreenProps<"notFound">) => {
   return (
@@ -17,7 +18,7 @@ const NotFoundScreen = ({ navigation }: RootStackScreenProps<"notFound">) => {
   );
 };
 
-const styles = StyleSheet.create({
+const styles = scaledStylesheet({
   container: {
     flex: 1,
     alignItems: "center",
