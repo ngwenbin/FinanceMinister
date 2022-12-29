@@ -1,7 +1,8 @@
 import { StatusBar } from "expo-status-bar";
-import { View, Platform, StyleSheet } from "react-native";
+import { View, Platform } from "react-native";
 
 import { Text } from "@components/Text";
+import { scaledStylesheet } from "@utils";
 
 const ModalScreen = () => {
   return (
@@ -15,7 +16,7 @@ const ModalScreen = () => {
   );
 };
 
-const styles = StyleSheet.create({
+const styles = scaledStylesheet({
   container: {
     flex: 1,
     alignItems: "center",

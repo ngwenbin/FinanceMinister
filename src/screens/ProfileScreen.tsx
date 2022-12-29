@@ -1,6 +1,7 @@
-import { View, StyleSheet } from "react-native";
+import { View } from "react-native";
 
 import { Text } from "@components/Text";
+import { scaledStylesheet } from "@utils";
 
 const ProfileScreen = () => {
   return (
@@ -12,7 +13,7 @@ const ProfileScreen = () => {
   );
 };
 
-const styles = StyleSheet.create({
+const styles = scaledStylesheet({
   container: {
     flex: 1,
     alignItems: "center",

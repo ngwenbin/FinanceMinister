@@ -1,8 +1,8 @@
-import { View, StyleSheet } from "react-native";
+import { View } from "react-native";
 
 import { Text } from "@components/Text";
 import type { RootTabScreenProps } from "@typings/navigation";
-import { getFont } from "@utils";
+import { getFont, scaledStylesheet } from "@utils";
 
 const HomeScreen = ({
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -17,7 +17,7 @@ const HomeScreen = ({
   );
 };
 
-const styles = StyleSheet.create({
+const styles = scaledStylesheet({
   container: {
     flex: 1,
     alignItems: "center",

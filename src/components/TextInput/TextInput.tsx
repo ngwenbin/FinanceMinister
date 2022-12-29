@@ -1,5 +1,4 @@
 import {
-  StyleSheet,
   View,
   TextStyle,
   TextInput as DefaultTextInput,
@@ -10,7 +9,7 @@ import { useState } from "react";
 import { Text } from "@components/Text";
 import { TextVariantsData } from "@constants/Fonts";
 import { Colors } from "@constants/Colors";
-import { getFont } from "@utils";
+import { getFont, scaledStylesheet } from "@utils";
 import { testIds } from "@utils/tests/testIds";
 import { ColorValue } from "react-native";
 
@@ -100,7 +99,7 @@ const TextInput = ({
 
 export default TextInput;
 
-const styles = StyleSheet.create({
+const styles = scaledStylesheet({
   container: {
     maxWidth: 320,
     width: "100%",
