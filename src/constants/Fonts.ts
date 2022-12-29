@@ -44,17 +44,33 @@ const textDisplays: CustomTextStyleProps<"display-small" | "display-large"> = {
   },
 };
 
-const textSubHeadings: CustomTextStyleProps<"subhead-small"> = {
+const textSubHeadings: CustomTextStyleProps<
+  "subhead-small" | "subhead-regular"
+> = {
   "subhead-small": {
     variation: "medium",
     size: "xs",
   },
+  "subhead-regular": {
+    variation: "medium",
+    size: "sm",
+  },
 };
 
-const textBody: CustomTextStyleProps<"body-regular"> = {
+const textBody: CustomTextStyleProps<
+  "body-regular" | "body-small" | "body-medium"
+> = {
   "body-regular": {
     variation: "regular",
     size: "xs",
+  },
+  "body-small": {
+    variation: "regular",
+    size: "sm",
+  },
+  "body-medium": {
+    variation: "regular",
+    size: "md",
   },
 };
 
