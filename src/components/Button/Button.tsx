@@ -6,11 +6,11 @@ type ButtonSizes = "xs" | "sm" | "md" | "lg";
 type ButtonVariant = "solid" | "outline" | "white";
 
 interface ButtonProps {
+  title: string;
   adornment?: JSX.Element;
   adornmentPosition?: "left" | "right";
   containerStyle?: ViewStyle;
   disabled?: boolean;
-  title?: string;
   size?: ButtonSizes;
   variant?: ButtonVariant;
   onPressCallback?: () => void;
@@ -18,11 +18,11 @@ interface ButtonProps {
 }
 
 const Button = ({
+  title,
   adornment,
   adornmentPosition,
   containerStyle,
   disabled,
-  title,
   size = "sm",
   variant = "solid",
   onPressCallback,

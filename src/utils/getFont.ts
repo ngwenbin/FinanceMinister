@@ -15,7 +15,7 @@ const getFont = (...args: GetFontProps): TextStyle => {
   return {
     fontFamily: FontWeight[variation],
     fontSize: FontSize[size],
-    ...customStyle,
+    ...(customStyle ? customStyle : {}),
   };
 };
 

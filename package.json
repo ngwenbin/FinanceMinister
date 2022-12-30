@@ -34,6 +34,7 @@
     "react-native": "0.70.5",
     "react-native-safe-area-context": "4.4.1",
     "react-native-screens": "~3.18.0",
+    "react-native-svg": "13.4.0",
     "react-native-web": "~0.18.9"
   },
   "devDependencies": {
@@ -64,6 +65,7 @@
     "**/*.{js,jsx,ts,tsx}": [
       "bash -c tsc --noEmit --skipLibCheck",
       "yarn lint",
+      "yarn jest --passWithNoTests",
       "prettier --write"
     ]
   },
