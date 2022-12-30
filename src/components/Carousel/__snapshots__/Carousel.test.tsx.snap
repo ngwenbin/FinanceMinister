@@ -1,0 +1,314 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Carousel> as default Renders correctly 1`] = `
+<View
+  style={
+    Object {
+      "height": 400,
+    }
+  }
+>
+  <RCTScrollView
+    bounces={false}
+    data={
+      Array [
+        Object {
+          "id": "0",
+          "subtitle": "This is the subtitle 1!",
+          "title": "This is the title 1!",
+        },
+        Object {
+          "id": "1",
+          "subtitle": "This is the subtitle 2!",
+          "title": "This is the title 2!",
+        },
+        Object {
+          "id": "2",
+          "subtitle": "This is the subtitle 3!",
+          "title": "This is the title 3!",
+        },
+        Object {
+          "id": "3",
+          "subtitle": "This is the subtitle 4!",
+          "title": "This is the title 4!",
+        },
+        Object {
+          "id": "4",
+          "subtitle": "This is the subtitle 5!",
+          "title": "This is the title 5!",
+        },
+        Object {
+          "id": "5",
+          "subtitle": "This is the subtitle 6!",
+          "title": "This is the title 6!",
+        },
+        Object {
+          "id": "6",
+          "subtitle": "This is the subtitle 7!",
+          "title": "This is the title 7!",
+        },
+        Object {
+          "id": "7",
+          "subtitle": "This is the subtitle 8!",
+          "title": "This is the title 8!",
+        },
+        Object {
+          "id": "8",
+          "subtitle": "This is the subtitle 9!",
+          "title": "This is the title 9!",
+        },
+        Object {
+          "id": "9",
+          "subtitle": "This is the subtitle 10!",
+          "title": "This is the title 10!",
+        },
+      ]
+    }
+    getItem={[Function]}
+    getItemCount={[Function]}
+    getItemLayout={[Function]}
+    horizontal={true}
+    initialNumToRender={0}
+    keyExtractor={[Function]}
+    maxToRenderPerBatch={1}
+    onContentSizeChange={[Function]}
+    onLayout={[Function]}
+    onMomentumScrollBegin={[Function]}
+    onMomentumScrollEnd={[Function]}
+    onScroll={[Function]}
+    onScrollBeginDrag={[Function]}
+    onScrollEndDrag={[Function]}
+    pagingEnabled={true}
+    removeClippedSubviews={true}
+    renderItem={[Function]}
+    scrollEventThrottle={16}
+    showsHorizontalScrollIndicator={false}
+    stickyHeaderIndices={Array []}
+    style={
+      Object {
+        "flex": 1,
+      }
+    }
+    viewabilityConfigCallbackPairs={Array []}
+    windowSize={2}
+  >
+    <View>
+      <View
+        style={
+          Array [
+            Object {
+              "flexDirection": "row",
+            },
+            null,
+          ]
+        }
+      >
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "justifyContent": "center",
+              "width": 300,
+            }
+          }
+          testID="carouselItem_0"
+        >
+          <View
+            style={
+              Object {
+                "height": 100,
+                "width": "100%",
+              }
+            }
+          />
+          <Text>
+            This is the title 1!
+          </Text>
+          <Text>
+            This is the subtitle 1!
+          </Text>
+        </View>
+      </View>
+      <View
+        style={
+          Object {
+            "width": 6750,
+          }
+        }
+      />
+    </View>
+  </RCTScrollView>
+  <View
+    pointerEvents="none"
+    style={
+      Object {
+        "flexDirection": "row",
+        "justifyContent": "center",
+        "paddingVertical": 2.5,
+        "width": "100%",
+      }
+    }
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "borderRadius": 10,
+            "height": 7.5,
+            "marginHorizontal": 2.5,
+            "width": 7.5,
+          },
+          Object {
+            "backgroundColor": "#374151",
+          },
+          undefined,
+        ]
+      }
+    />
+    <View
+      style={
+        Array [
+          Object {
+            "borderRadius": 10,
+            "height": 7.5,
+            "marginHorizontal": 2.5,
+            "width": 7.5,
+          },
+          Object {
+            "backgroundColor": "#D1D5DB",
+          },
+          undefined,
+        ]
+      }
+    />
+    <View
+      style={
+        Array [
+          Object {
+            "borderRadius": 10,
+            "height": 7.5,
+            "marginHorizontal": 2.5,
+            "width": 7.5,
+          },
+          Object {
+            "backgroundColor": "#D1D5DB",
+          },
+          undefined,
+        ]
+      }
+    />
+    <View
+      style={
+        Array [
+          Object {
+            "borderRadius": 10,
+            "height": 7.5,
+            "marginHorizontal": 2.5,
+            "width": 7.5,
+          },
+          Object {
+            "backgroundColor": "#D1D5DB",
+          },
+          undefined,
+        ]
+      }
+    />
+    <View
+      style={
+        Array [
+          Object {
+            "borderRadius": 10,
+            "height": 7.5,
+            "marginHorizontal": 2.5,
+            "width": 7.5,
+          },
+          Object {
+            "backgroundColor": "#D1D5DB",
+          },
+          undefined,
+        ]
+      }
+    />
+    <View
+      style={
+        Array [
+          Object {
+            "borderRadius": 10,
+            "height": 7.5,
+            "marginHorizontal": 2.5,
+            "width": 7.5,
+          },
+          Object {
+            "backgroundColor": "#D1D5DB",
+          },
+          undefined,
+        ]
+      }
+    />
+    <View
+      style={
+        Array [
+          Object {
+            "borderRadius": 10,
+            "height": 7.5,
+            "marginHorizontal": 2.5,
+            "width": 7.5,
+          },
+          Object {
+            "backgroundColor": "#D1D5DB",
+          },
+          undefined,
+        ]
+      }
+    />
+    <View
+      style={
+        Array [
+          Object {
+            "borderRadius": 10,
+            "height": 7.5,
+            "marginHorizontal": 2.5,
+            "width": 7.5,
+          },
+          Object {
+            "backgroundColor": "#D1D5DB",
+          },
+          undefined,
+        ]
+      }
+    />
+    <View
+      style={
+        Array [
+          Object {
+            "borderRadius": 10,
+            "height": 7.5,
+            "marginHorizontal": 2.5,
+            "width": 7.5,
+          },
+          Object {
+            "backgroundColor": "#D1D5DB",
+          },
+          undefined,
+        ]
+      }
+    />
+    <View
+      style={
+        Array [
+          Object {
+            "borderRadius": 10,
+            "height": 7.5,
+            "marginHorizontal": 2.5,
+            "width": 7.5,
+          },
+          Object {
+            "backgroundColor": "#D1D5DB",
+          },
+          undefined,
+        ]
+      }
+    />
+  </View>
+</View>
+`;

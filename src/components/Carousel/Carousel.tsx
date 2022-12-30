@@ -26,7 +26,7 @@ interface PaginationProps<T> {
 
 interface CarouselProps<T> {
   data: Array<T & { id: string }>;
-  containerContent: (item: T) => JSX.Element;
+  contentRenderer: (item: T) => JSX.Element;
   initialNumToRender?: number;
   maxToRenderPerBatch?: number;
   windowSize?: number;
@@ -75,7 +75,7 @@ const Slider = memo(
 
 const Carousel = <T,>({
   data,
-  containerContent,
+  contentRenderer,
   initialNumToRender = 0,
   maxToRenderPerBatch = 1,
   windowSize = 2,
@@ -85,9 +85,9 @@ const Carousel = <T,>({
   activePaginationColor,
   inActivePaginationColor,
 }: CarouselProps<T>) => {
-  const [index, setIndex] = useState(0);
-  const indexRef = useRef(index);
-  indexRef.current = index;
+  const [currIndex, setIndex] = useState(0);
+  const indexRef = useRef(currIndex);
+  indexRef.current = currIndex;
   const onScroll = useCallback(
     (event: NativeSyntheticEvent<NativeScrollEvent>) => {
       const slideSize = event.nativeEvent.layoutMeasurement.width;
@@ -132,7 +132,7 @@ const Carousel = <T,>({
         data={data}
         style={{ flex: 1 }}
         renderItem={({ item }) => (
-          <Slider item={item} renderer={containerContent} />
+          <Slider item={item} renderer={contentRenderer} />
         )}
         pagingEnabled
         horizontal
@@ -144,7 +144,7 @@ const Carousel = <T,>({
       {showPagination ? (
         <Pagination
           data={data}
-          index={index}
+          index={currIndex}
           style={paginationStyle}
           activeColor={activePaginationColor}
           inActiveColor={inActivePaginationColor}
