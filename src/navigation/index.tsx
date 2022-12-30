@@ -14,8 +14,11 @@ import {
   ProfileScreen,
   AnalyticsScreen,
   AddExpenseScreen,
+  OnboardingScreen,
+  LoginScreen,
+  RegisterScreen,
 } from "@screens/index";
-import { RootStackParamList, RootTabParamList } from "@typings/navigation";
+import { RootStackParamList, RootTabGroupList } from "@typings/navigation";
 import LinkingConfiguration from "./LinkingConfiguration";
 import { getFont, normalize } from "@utils";
 
@@ -39,7 +42,25 @@ const Stack = createNativeStackNavigator<RootStackParamList>();
 
 const RootNavigator = () => {
   return (
-    <Stack.Navigator>
+    <Stack.Navigator
+      screenOptions={{
+        headerTitleStyle: {
+          ...getFont("semibold", "lg"),
+          color: Colors.gray[900],
+        },
+      }}
+    >
+      <Stack.Screen
+        name="onboarding"
+        component={OnboardingScreen}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="login"
+        component={LoginScreen}
+        options={{ headerTitle: "Log in" }}
+      />
+      <Stack.Screen name="register" component={RegisterScreen} />
       <Stack.Screen
         name="root"
         component={BottomTabNavigator}
@@ -57,7 +78,7 @@ const RootNavigator = () => {
   );
 };
 
-const BottomTab = createBottomTabNavigator<RootTabParamList>();
+const BottomTab = createBottomTabNavigator<RootTabGroupList>();
 
 const TabBarIcon = (
   name: React.ComponentProps<typeof MaterialIcons>["name"],

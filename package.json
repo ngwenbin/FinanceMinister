@@ -65,7 +65,7 @@
     "**/*.{js,jsx,ts,tsx}": [
       "bash -c tsc --noEmit --skipLibCheck",
       "yarn lint",
-      "yarn jest",
+      "yarn jest --passWithNoTests",
       "prettier --write"
     ]
   },
