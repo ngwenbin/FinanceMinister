@@ -3,9 +3,9 @@ import Realm from "realm";
 import app from "../../RealmApp";
 
 interface AuthContextProps {
-  signUp: (email: string, password: string) => Promise<void>;
-  signIn: (email: string, password: string) => Promise<void>;
-  signOut: () => void;
+  login: (email: string, password: string) => Promise<void>;
+  register: (email: string, password: string) => Promise<void>;
+  logout: () => void;
   user: Realm.User<
     Realm.DefaultFunctionsFactory,
     SimpleObject,
@@ -45,17 +45,17 @@ const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     };
   }, [user]);
 
-  const signIn = async (email: string, password: string) => {
+  const login = async (email: string, password: string) => {
     const creds = Realm.Credentials.emailPassword(email, password);
     const newUser = await app.logIn(creds);
     setUser(newUser);
   };
 
-  const signUp = async (email: string, password: string) => {
+  const register = async (email: string, password: string) => {
     await app.emailPasswordAuth.registerUser({ email, password });
   };
 
-  const signOut = () => {
+  const logout = () => {
     if (user == null) {
       console.warn("Not logged in, can't log out!");
       return;
@@ -67,9 +67,9 @@ const AuthProvider = ({ children }: { children: React.ReactNode }) => {
   return (
     <AuthContext.Provider
       value={{
-        signUp,
-        signIn,
-        signOut,
+        login,
+        register,
+        logout,
         user,
       }}
     >
