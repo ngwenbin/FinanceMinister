@@ -3,6 +3,7 @@ import {
   TextStyle,
   TextInput as DefaultTextInput,
   TextInputProps as DefaultTextInputProps,
+  ViewStyle,
 } from "react-native";
 import { useState } from "react";
 
@@ -16,6 +17,7 @@ import { ColorValue } from "react-native";
 interface TextInputProps extends Omit<DefaultTextInputProps, "multiline"> {
   label?: string;
   labelStyle?: TextStyle;
+  containerStyle?: ViewStyle;
   required?: boolean;
   subtext?: string; // use it for error message
   subtextStyle?: TextStyle;
@@ -25,6 +27,7 @@ interface TextInputProps extends Omit<DefaultTextInputProps, "multiline"> {
 const TextInput = ({
   label,
   labelStyle,
+  containerStyle,
   required,
   subtext,
   subtextStyle,
@@ -35,7 +38,7 @@ const TextInput = ({
 
   const [isFocused, setIsFocused] = useState<boolean>(false);
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, containerStyle]}>
       {label ? (
         <Text
           testID={testIds.sharedComponents.textInput.label}
@@ -103,7 +106,6 @@ export default TextInput;
 
 const styles = scaledStylesheet({
   container: {
-    backgroundColor: "red",
     width: "100%",
   },
   label: {

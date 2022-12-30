@@ -23,7 +23,7 @@ exports[`<Button> as default Renders correctly 1`] = `
       },
       Object {
         "_flexGap": 10,
-        "borderRadius": 7.5,
+        "borderRadius": 6,
         "fontFamily": "Inter_500Medium",
         "fontSize": 14,
         "paddingHorizontal": 20,

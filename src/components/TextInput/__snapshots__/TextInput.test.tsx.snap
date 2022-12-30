@@ -4,8 +4,6 @@ exports[`<TextInput> as default Renders correctly 1`] = `
 <View
   style={
     Object {
-      "margin": 5,
-      "maxWidth": 320,
       "width": "100%",
     }
   }
@@ -23,6 +21,7 @@ exports[`<TextInput> as default Renders correctly 1`] = `
         Array [
           Object {
             "color": "#111827",
+            "marginBottom": 2,
           },
           undefined,
         ],
@@ -49,10 +48,8 @@ exports[`<TextInput> as default Renders correctly 1`] = `
         Object {
           "borderRadius": 8,
           "borderWidth": 1,
-          "marginBottom": 2,
-          "marginTop": 6,
-          "paddingHorizontal": 20,
-          "paddingVertical": 12.5,
+          "paddingHorizontal": 15,
+          "paddingVertical": 10,
         },
         undefined,
       ]
@@ -76,6 +73,7 @@ exports[`<TextInput> as default Renders correctly 1`] = `
           },
           Object {
             "color": "#6B7280",
+            "marginTop": 2,
           },
           undefined,
         ],
