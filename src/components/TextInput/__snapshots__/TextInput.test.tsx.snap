@@ -3,9 +3,12 @@
 exports[`<TextInput> as default Renders correctly 1`] = `
 <View
   style={
-    Object {
-      "width": "100%",
-    }
+    Array [
+      Object {
+        "width": "100%",
+      },
+      undefined,
+    ]
   }
 >
   <Text
