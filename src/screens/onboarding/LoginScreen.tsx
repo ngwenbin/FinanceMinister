@@ -7,8 +7,12 @@ import { Button } from "@components/Button";
 import { Colors } from "@constants/Colors";
 import { RootStackScreenProps } from "@typings/navigation";
 import { TextInput } from "@components/TextInput";
+// import { useState } from "react";
 
 const LoginScreen = ({ ..._props }: RootStackScreenProps<"login">) => {
+  // const [username, setUsername] = useState<string>("");
+  // const [password, setPassword] = useState<string>("");
+
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.inputContainer}>
@@ -39,8 +43,6 @@ const LoginScreen = ({ ..._props }: RootStackScreenProps<"login">) => {
 
 const styles = scaledStylesheet({
   container: {
-    // flex: 1,
-    // backgroundColor: "red",
     alignItems: "center",
     justifyContent: "center",
     paddingHorizontal: 20,
@@ -52,9 +54,6 @@ const styles = scaledStylesheet({
     marginTop: normalize(12),
   },
   assetContainer: {
-    // height: 100,
-    // width: 200,
-    // aspectRatio: 1,
     marginVertical: 36,
   },
 });

@@ -1,7 +1,7 @@
 module.exports = function (api) {
-  api.cache(true);
+  api.cache(false);
   return {
-    presets: ["babel-preset-expo"],
+    presets: ["babel-preset-expo", "module:metro-react-native-babel-preset"],
     plugins: [
       [
         "module-resolver",
@@ -16,9 +16,14 @@ module.exports = function (api) {
             "@screens": "./src/screens",
             "@utils": "./src/utils",
             "@typings": "./src/typings",
+            "@providers": "./src/providers",
           },
           extensions: [".js", ".jsx", ".ts", ".tsx"],
         },
+      ],
+      [
+        "module:react-native-dotenv",
+        { moduleName: "react-native-dotenv", path: ".env" },
       ],
     ],
   };
