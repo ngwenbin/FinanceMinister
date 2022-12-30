@@ -14,7 +14,7 @@ import { testIds } from "@utils/tests/testIds";
 import { ColorValue } from "react-native";
 
 interface TextInputProps extends Omit<DefaultTextInputProps, "multiline"> {
-  label: string;
+  label?: string;
   labelStyle?: TextStyle;
   required?: boolean;
   subtext?: string; // use it for error message
@@ -36,22 +36,24 @@ const TextInput = ({
   const [isFocused, setIsFocused] = useState<boolean>(false);
   return (
     <View style={styles.container}>
-      <Text
-        testID={testIds.sharedComponents.textInput.label}
-        style={[styles.label, labelStyle]}
-        variant="body-small"
-      >
-        {label}
-        {required ? (
-          <Text
-            color={Colors.error[500]}
-            variant="body-small"
-            testID={testIds.sharedComponents.textInput.labelAdornment}
-          >
-            *
-          </Text>
-        ) : null}
-      </Text>
+      {label ? (
+        <Text
+          testID={testIds.sharedComponents.textInput.label}
+          style={[styles.label, labelStyle]}
+          variant="body-small"
+        >
+          {label}
+          {required ? (
+            <Text
+              color={Colors.error[500]}
+              variant="body-small"
+              testID={testIds.sharedComponents.textInput.labelAdornment}
+            >
+              *
+            </Text>
+          ) : null}
+        </Text>
+      ) : null}
       <DefaultTextInput
         testID={testIds.sharedComponents.textInput.input}
         style={[
@@ -101,22 +103,21 @@ export default TextInput;
 
 const styles = scaledStylesheet({
   container: {
-    maxWidth: 320,
+    backgroundColor: "red",
     width: "100%",
-    margin: 4,
   },
   label: {
     color: Colors.gray[900],
-  },
-  textInputContainer: {
-    paddingHorizontal: 16,
-    paddingVertical: 10,
-    borderWidth: 1,
-    borderRadius: 8,
-    marginTop: 6,
     marginBottom: 2,
   },
+  textInputContainer: {
+    paddingHorizontal: 12,
+    paddingVertical: 8,
+    borderWidth: 1,
+    borderRadius: 8,
+  },
   subtext: {
+    marginTop: 2,
     color: Colors.gray[500],
   },
 });
