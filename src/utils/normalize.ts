@@ -82,6 +82,7 @@ const targetProperties: Array<TargetTextProperties | TargetViewProperties> = [
   "paddingVertical",
   "paddingHorizontal",
   "height",
+  "width",
 ];
 
 export const scaledStylesheet = (styles: Record<string, AllStyles>) => {
@@ -99,6 +100,8 @@ export const scaledStylesheet = (styles: Record<string, AllStyles>) => {
         ];
         if (stylePropertyValue && typeof stylePropertyValue === "number") {
           normalizedStyle[property] = normalize(stylePropertyValue);
+        } else {
+          normalizedStyle[property] = stylePropertyValue;
         }
       } else {
         normalizedStyle[property] =
@@ -107,5 +110,6 @@ export const scaledStylesheet = (styles: Record<string, AllStyles>) => {
     });
     normalizedStyles[styleKey] = normalizedStyle;
   });
+  console.log(normalizedStyles);
   return StyleSheet.create(normalizedStyles);
 };
