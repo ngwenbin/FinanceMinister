@@ -45,7 +45,7 @@ const textDisplays: CustomTextStyleProps<"display-small" | "display-large"> = {
 };
 
 const textSubHeadings: CustomTextStyleProps<
-  "subhead-small" | "subhead-regular"
+  "subhead-small" | "subhead-regular" | "subhead-large"
 > = {
   "subhead-small": {
     variation: "medium",
@@ -54,6 +54,10 @@ const textSubHeadings: CustomTextStyleProps<
   "subhead-regular": {
     variation: "medium",
     size: "sm",
+  },
+  "subhead-large": {
+    variation: "semibold",
+    size: "xl",
   },
 };
 
