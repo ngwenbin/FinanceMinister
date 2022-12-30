@@ -110,6 +110,5 @@ export const scaledStylesheet = (styles: Record<string, AllStyles>) => {
     });
     normalizedStyles[styleKey] = normalizedStyle;
   });
-  console.log(normalizedStyles);
   return StyleSheet.create(normalizedStyles);
 };
