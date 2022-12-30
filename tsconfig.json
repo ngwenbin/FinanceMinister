@@ -18,6 +18,6 @@
       "@typings/*": ["src/typings/*"]
     }
   },
-  "include": ["src/**/*"],
+  "include": ["src/**/*", "App.tsx"],
   "exclude": ["node_modules"]
 }

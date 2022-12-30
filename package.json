@@ -1,7 +1,7 @@
 {
   "name": "finance-minister",
   "version": "1.0.0",
-  "main": "src/App.tsx",
+  "main": "App.tsx",
   "scripts": {
     "dev": "expo start",
     "android": "expo start --android",
