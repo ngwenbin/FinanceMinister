@@ -4,7 +4,7 @@ exports[`<TextInput> as default Renders correctly 1`] = `
 <View
   style={
     Object {
-      "margin": 4,
+      "margin": 5,
       "maxWidth": 320,
       "width": "100%",
     }
@@ -51,8 +51,8 @@ exports[`<TextInput> as default Renders correctly 1`] = `
           "borderWidth": 1,
           "marginBottom": 2,
           "marginTop": 6,
-          "paddingHorizontal": 16,
-          "paddingVertical": 10,
+          "paddingHorizontal": 20,
+          "paddingVertical": 12.5,
         },
         undefined,
       ]
