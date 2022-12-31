@@ -1,9 +1,12 @@
 {
   "extends": "expo/tsconfig.base",
   "compilerOptions": {
+    "esModuleInterop": true,
     "strict": true,
     "module": "es6",
+    "target": "es6",
     "jsx": "react-jsx",
+    "allowSyntheticDefaultImports": true,
     "skipLibCheck": true,
     "baseUrl": ".",
     "paths": {
@@ -15,9 +18,10 @@
       "@navigation": ["src/navigation/*"],
       "@screens": ["src/screens/*"],
       "@utils/*": ["src/utils/*"],
-      "@typings/*": ["src/typings/*"]
+      "@typings/*": ["src/typings/*"],
+      "@providers/*": ["src/providers/*"]
     }
   },
-  "include": ["src/**/*", "App.tsx"],
+  "include": ["src/**/*", "src/App.tsx", "ReamApp.ts"],
   "exclude": ["node_modules"]
 }
