@@ -60,7 +60,11 @@ const RootNavigator = () => {
         component={LoginScreen}
         options={{ headerTitle: "Log in" }}
       />
-      <Stack.Screen name="register" component={RegisterScreen} />
+      <Stack.Screen
+        name="register"
+        component={RegisterScreen}
+        options={{ headerTitle: "Register" }}
+      />
       <Stack.Screen
         name="root"
         component={BottomTabNavigator}
