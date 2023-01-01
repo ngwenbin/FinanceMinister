@@ -6,10 +6,20 @@ import { RootStackScreenProps } from "@typings/navigation";
 import { normalize, scaledStylesheet } from "@utils";
 import { Button } from "@components/Button";
 import { Colors } from "@constants/Colors";
+import { useAuth } from "@providers";
+import { useEffect } from "react";
 
 const OnboardingScreen = ({
   navigation,
 }: RootStackScreenProps<"onboarding">) => {
+  const { user } = useAuth();
+
+  useEffect(() => {
+    if (user != null) {
+      navigation.navigate("root");
+    }
+  }, [user, navigation]);
+
   return (
     <SafeAreaView style={styles.container}>
       <View style={{ flex: 1, justifyContent: "flex-end" }}>
