@@ -1,6 +1,6 @@
-import { testIds } from "@utils/tests/testIds";
-import { Pressable, Text, View, ViewStyle } from "react-native";
+import { Text, Pressable, View, ViewStyle } from "react-native";
 import { buttonStyles as styles } from "./Button.style";
+import { testIds } from "@utils/tests/testIds";
 
 type ButtonSizes = "xs" | "sm" | "md" | "lg";
 type ButtonVariant = "solid" | "outline" | "white";
@@ -17,7 +17,7 @@ interface ButtonProps {
   onLongPressCallback?: () => void;
 }
 
-function Button({
+const Button = ({
   title,
   adornment,
   adornmentPosition,
@@ -27,7 +27,7 @@ function Button({
   variant = "solid",
   onPressCallback,
   onLongPressCallback,
-}: ButtonProps) {
+}: ButtonProps) => {
   return (
     <Pressable
       style={({ pressed }) => [
@@ -73,6 +73,6 @@ function Button({
       ) : null}
     </Pressable>
   );
-}
+};
 
 export default Button;

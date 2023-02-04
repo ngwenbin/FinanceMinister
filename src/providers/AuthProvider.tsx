@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useRef, useState } from "react";
+import React, { useContext, useState, useEffect, useRef } from "react";
 import Realm from "realm";
 import app from "../../RealmApp";
 
@@ -14,7 +14,7 @@ interface AuthContextProps {
 }
 
 const AuthContext = React.createContext<AuthContextProps | null>(null);
-function AuthProvider({ children }: { children: React.ReactNode }) {
+const AuthProvider = ({ children }: { children: React.ReactNode }) => {
   const [user, setUser] = useState(app.currentUser);
   const realmRef = useRef<Realm | null>(null);
 
@@ -35,7 +35,6 @@ function AuthProvider({ children }: { children: React.ReactNode }) {
       realmRef.current = userRealm;
     });
 
-    // eslint-disable-next-line consistent-return
     return () => {
       // cleanup function
       const userRealm = realmRef.current;
@@ -67,7 +66,6 @@ function AuthProvider({ children }: { children: React.ReactNode }) {
 
   return (
     <AuthContext.Provider
-      // eslint-disable-next-line react/jsx-no-constructed-context-values
       value={{
         login,
         register,
@@ -78,7 +76,7 @@ function AuthProvider({ children }: { children: React.ReactNode }) {
       {children}
     </AuthContext.Provider>
   );
-}
+};
 
 const useAuth = () => {
   const auth = useContext(AuthContext);

@@ -1,7 +1,8 @@
-import "@testing-library/jest-native/extend-expect";
 import { render, screen } from "@testing-library/react-native";
-import { Text, View } from "react-native";
+import "@testing-library/jest-native/extend-expect";
+
 import Carousel from "./Carousel";
+import { Text, View } from "react-native";
 
 interface CarouselListData {
   id: string;
@@ -13,26 +14,30 @@ const carouselListLength = 10;
 
 const carouselList: Array<CarouselListData> = Array.from({
   length: carouselListLength,
-}).map((_, i) => ({
-  id: `${i}`,
-  title: `This is the title ${i + 1}!`,
-  subtitle: `This is the subtitle ${i + 1}!`,
-}));
+}).map((_, i) => {
+  return {
+    id: `${i}`,
+    title: `This is the title ${i + 1}!`,
+    subtitle: `This is the subtitle ${i + 1}!`,
+  };
+});
 
-const carouselContentLayout = (item: CarouselListData) => (
-  <View
-    testID={`carouselItem_${item.id}`}
-    style={{
-      width: 300,
-      justifyContent: "center",
-      alignItems: "center",
-    }}
-  >
-    <View style={{ width: "100%", height: 100 }} />
-    <Text>{item.title}</Text>
-    <Text>{item.subtitle}</Text>
-  </View>
-);
+const carouselContentLayout = (item: CarouselListData) => {
+  return (
+    <View
+      testID={`carouselItem_${item.id}`}
+      style={{
+        width: 300,
+        justifyContent: "center",
+        alignItems: "center",
+      }}
+    >
+      <View style={{ width: "100%", height: 100 }} />
+      <Text>{item.title}</Text>
+      <Text>{item.subtitle}</Text>
+    </View>
+  );
+};
 
 describe("<Carousel>", () => {
   describe("as default", () => {

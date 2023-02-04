@@ -1,8 +1,9 @@
-import "@testing-library/jest-native/extend-expect";
 import { render, screen } from "@testing-library/react-native";
-import { testIds } from "@utils/tests/testIds";
-import { Text } from "react-native";
+import "@testing-library/jest-native/extend-expect";
+
 import Button from "./Button";
+import { Text } from "react-native";
+import { testIds } from "@utils/tests/testIds";
 
 const buttonTitle = "Test button";
 const buttonTitleTestId = testIds.sharedComponents.button.buttonTitle;

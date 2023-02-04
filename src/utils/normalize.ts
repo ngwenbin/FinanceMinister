@@ -1,10 +1,10 @@
 import {
-  Dimensions,
-  ImageStyle,
   PixelRatio,
-  StyleSheet,
-  TextStyle,
+  Dimensions,
   ViewStyle,
+  TextStyle,
+  StyleSheet,
+  ImageStyle,
 } from "react-native";
 
 const ratio = PixelRatio.get();
@@ -15,37 +15,29 @@ export const normalize = (size: number): number => {
   if (ratio >= 2 && ratio < 3) {
     if (width < 360) {
       return size * 0.95;
-    }
-    if (height < 667) {
+    } else if (height < 667) {
       return size;
-    }
-    if (height >= 667 && height <= 735) {
+    } else if (height >= 667 && height <= 735) {
       return size * 1.15;
     }
 
     return size * 1.25;
-  }
-  if (ratio >= 3 && ratio < 3.5) {
+  } else if (ratio >= 3 && ratio < 3.5) {
     if (width < 360) {
       return size;
-    }
-    if (height < 667) {
+    } else if (height < 667) {
       return size * 1.15;
-    }
-    if (height >= 667 && height <= 735) {
+    } else if (height >= 667 && height <= 735) {
       return size * 1.2;
     }
 
     return size * 1.27;
-  }
-  if (ratio >= 3.5) {
+  } else if (ratio >= 3.5) {
     if (width < 360) {
       return size;
-    }
-    if (height < 667) {
+    } else if (height < 667) {
       return size * 1.2;
-    }
-    if (height >= 667 && height <= 735) {
+    } else if (height >= 667 && height <= 735) {
       return size * 1.25;
     }
 
@@ -96,9 +88,9 @@ const targetProperties: Array<TargetTextProperties | TargetViewProperties> = [
 export const scaledStylesheet = (styles: Record<string, AllStyles>) => {
   const normalizedStyles = {} as Record<string, AllStyles>;
   Object.keys(styles).forEach((styleKey) => {
-    const normalizedStyle = {} as any;
+    let normalizedStyle = {} as any;
     Object.keys(styles[styleKey]).forEach((property) => {
-      const styleProperty = property as
+      let styleProperty = property as
         | TargetTextProperties
         | TargetViewProperties;
 

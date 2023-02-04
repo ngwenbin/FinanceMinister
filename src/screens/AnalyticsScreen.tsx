@@ -1,8 +1,9 @@
-import { Text } from "@components/Text";
-import { scaledStylesheet } from "@utils";
 import { View } from "react-native";
 
-function AnalyticsScreen() {
+import { Text } from "@components/Text";
+import { scaledStylesheet } from "@utils";
+
+const AnalyticsScreen = () => {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Tab Two</Text>
@@ -10,7 +11,7 @@ function AnalyticsScreen() {
       <Text>Analytics</Text>
     </View>
   );
-}
+};
 
 const styles = scaledStylesheet({
   container: {

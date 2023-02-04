@@ -1,4 +1,3 @@
-/* eslint-disable import/prefer-default-export */
 const primary = {
   100: "#CCE1FE",
   200: "#9AC1FE",

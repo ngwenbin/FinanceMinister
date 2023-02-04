@@ -1,24 +1,26 @@
-import { Colors } from "@constants/Colors";
 import MaterialIcons from "@expo/vector-icons/MaterialIcons";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { DefaultTheme, NavigationContainer } from "@react-navigation/native";
+import { NavigationContainer, DefaultTheme } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import * as React from "react";
+
+import { Colors } from "@constants/Colors";
+
 import {
-  AddExpenseScreen,
-  AnalyticsScreen,
-  ExpensesScreen,
   HomeScreen,
-  LoginScreen,
-  ModalScreen,
+  ExpensesScreen,
   NotFoundScreen,
-  OnboardingScreen,
+  ModalScreen,
   ProfileScreen,
+  AnalyticsScreen,
+  AddExpenseScreen,
+  OnboardingScreen,
+  LoginScreen,
   RegisterScreen,
 } from "@screens/index";
 import { RootStackParamList, RootTabGroupList } from "@typings/navigation";
-import { getFont, normalize } from "@utils";
-import * as React from "react";
 import LinkingConfiguration from "./LinkingConfiguration";
+import { getFont, normalize } from "@utils";
 
 const CustomTheme = {
   ...DefaultTheme,
@@ -28,17 +30,17 @@ const CustomTheme = {
   },
 };
 
-function Navigation() {
+const Navigation = () => {
   return (
     <NavigationContainer linking={LinkingConfiguration} theme={CustomTheme}>
       <RootNavigator />
     </NavigationContainer>
   );
-}
+};
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
-function RootNavigator() {
+const RootNavigator = () => {
   return (
     <Stack.Navigator
       screenOptions={{
@@ -78,18 +80,18 @@ function RootNavigator() {
       </Stack.Group>
     </Stack.Navigator>
   );
-}
+};
 
 const BottomTab = createBottomTabNavigator<RootTabGroupList>();
 
-function TabBarIcon(
+const TabBarIcon = (
   name: React.ComponentProps<typeof MaterialIcons>["name"],
   color: string
-): JSX.Element {
+): JSX.Element => {
   return <MaterialIcons size={normalize(20)} name={name} color={color} />;
-}
+};
 
-function BottomTabNavigator() {
+const BottomTabNavigator = () => {
   return (
     <BottomTab.Navigator
       initialRouteName="home"
@@ -152,6 +154,6 @@ function BottomTabNavigator() {
       />
     </BottomTab.Navigator>
   );
-}
+};
 
 export default Navigation;

@@ -1,12 +1,13 @@
-import { Text } from "@components/Text";
-import { scaledStylesheet } from "@utils";
-import { TouchableOpacity, View } from "react-native";
-import { RootStackScreenProps } from "../typings/navigation";
+import { View, TouchableOpacity } from "react-native";
 
-function NotFoundScreen({ navigation }: RootStackScreenProps<"notFound">) {
+import { Text } from "@components/Text";
+import { RootStackScreenProps } from "../typings/navigation";
+import { scaledStylesheet } from "@utils";
+
+const NotFoundScreen = ({ navigation }: RootStackScreenProps<"notFound">) => {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>This screen doesn&apos;t exist.</Text>
+      <Text style={styles.title}>This screen doesn't exist.</Text>
       <TouchableOpacity
         onPress={() => navigation.replace("root")}
         style={styles.link}
@@ -15,7 +16,7 @@ function NotFoundScreen({ navigation }: RootStackScreenProps<"notFound">) {
       </TouchableOpacity>
     </View>
   );
-}
+};
 
 const styles = scaledStylesheet({
   container: {

@@ -1,8 +1,9 @@
-import { Text } from "@components/Text";
-import { scaledStylesheet } from "@utils";
 import { View } from "react-native";
 
-function ExpensesScreen() {
+import { Text } from "@components/Text";
+import { scaledStylesheet } from "@utils";
+
+const ExpensesScreen = () => {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Tab Two</Text>
@@ -10,7 +11,7 @@ function ExpensesScreen() {
       <Text>Expenses</Text>
     </View>
   );
-}
+};
 
 const styles = scaledStylesheet({
   container: {

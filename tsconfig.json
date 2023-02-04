@@ -1,12 +1,11 @@
 {
   "extends": "expo/tsconfig.base",
   "compilerOptions": {
-    "moduleResolution": "node",
-    "noEmit": true,
     "esModuleInterop": true,
     "strict": true,
-    "jsx": "react-native",
-    "lib": ["dom", "esnext"],
+    "module": "es6",
+    "target": "es6",
+    "jsx": "react-jsx",
     "allowSyntheticDefaultImports": true,
     "skipLibCheck": true,
     "baseUrl": ".",
@@ -23,6 +22,6 @@
       "@providers/*": ["src/providers/*"]
     }
   },
-  "include": ["src/**/*", "src/App.tsx", "ReamApp.ts", "src/declaration.d.ts"],
+  "include": ["src/**/*", "src/App.tsx", "ReamApp.ts"],
   "exclude": ["node_modules"]
 }
