@@ -1,16 +1,15 @@
+import { Button } from "@components/Button";
+import { Text } from "@components/Text";
+import { TextInput } from "@components/TextInput";
+import { Colors } from "@constants/Colors";
+import { useAuth } from "@providers";
+import { RootStackScreenProps } from "@typings/navigation";
+import { normalize, scaledStylesheet } from "@utils";
+import { useEffect, useState } from "react";
 import { Alert, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
-import { Text } from "@components/Text";
-import { normalize, scaledStylesheet } from "@utils";
-import { Button } from "@components/Button";
-import { Colors } from "@constants/Colors";
-import { RootStackScreenProps } from "@typings/navigation";
-import { useEffect, useState } from "react";
-import { useAuth } from "@providers";
-import { TextInput } from "@components/TextInput";
-
-const RegisterScreen = ({ navigation }: RootStackScreenProps<"register">) => {
+function RegisterScreen({ navigation }: RootStackScreenProps<"register">) {
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const [errMsg, setErrMsg] = useState<string>("");
@@ -23,19 +22,17 @@ const RegisterScreen = ({ navigation }: RootStackScreenProps<"register">) => {
   }, [user, navigation]);
 
   const onClickLogIn = async () => {
-    console.log("Trying to register with user: " + email);
+    console.log(`Trying to register with user: ${email}`);
     try {
       await register(email, password);
       login(email, password);
     } catch (error) {
-      let err = error as Error;
+      const err = error as Error;
       const errorMessage = `Failed to sign in: ${err.message}`;
       console.error(errorMessage);
       Alert.alert(errorMessage);
     }
   };
-
-  useEffect(() => {}, []);
 
   return (
     <SafeAreaView style={styles.container}>
@@ -48,7 +45,7 @@ const RegisterScreen = ({ navigation }: RootStackScreenProps<"register">) => {
           autoCapitalize="none"
           autoComplete="email"
           autoCorrect={false}
-          blurOnSubmit={true}
+          blurOnSubmit
         />
         <TextInput
           placeholder="Password"
@@ -58,7 +55,7 @@ const RegisterScreen = ({ navigation }: RootStackScreenProps<"register">) => {
           autoCapitalize="none"
           autoComplete="password"
           autoCorrect={false}
-          blurOnSubmit={true}
+          blurOnSubmit
         />
         <TextInput
           placeholder="Re-enter password"
@@ -73,7 +70,7 @@ const RegisterScreen = ({ navigation }: RootStackScreenProps<"register">) => {
           autoCapitalize="none"
           autoComplete="password"
           autoCorrect={false}
-          blurOnSubmit={true}
+          blurOnSubmit
         />
       </View>
       <Button
@@ -87,12 +84,12 @@ const RegisterScreen = ({ navigation }: RootStackScreenProps<"register">) => {
         color={Colors.gray[400]}
         style={{ textAlign: "center" }}
       >
-        By joining you agree to Finance Minister's{"\n"}Terms of Service and
-        Privacy Policy
+        By joining you agree to Finance Minister&apos;s{"\n"}Terms of Service
+        and Privacy Policy
       </Text>
     </SafeAreaView>
   );
-};
+}
 
 const styles = scaledStylesheet({
   container: {

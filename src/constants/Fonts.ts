@@ -1,4 +1,4 @@
-import { getFont, GetFontPropKeys } from "@utils";
+import { GetFontPropKeys, getFont } from "@utils";
 import { TupleToObjectInheritKeyNames } from "@utils/tsHelpers";
 
 export enum FontSize {

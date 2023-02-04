@@ -1,10 +1,9 @@
-import { StatusBar } from "expo-status-bar";
-import { View, Platform } from "react-native";
-
 import { Text } from "@components/Text";
 import { scaledStylesheet } from "@utils";
+import { StatusBar } from "expo-status-bar";
+import { Platform, View } from "react-native";
 
-const ModalScreen = () => {
+function ModalScreen() {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Modal</Text>
@@ -14,7 +13,7 @@ const ModalScreen = () => {
       <StatusBar style={Platform.OS === "ios" ? "light" : "auto"} />
     </View>
   );
-};
+}
 
 const styles = scaledStylesheet({
   container: {

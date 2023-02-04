@@ -1,18 +1,17 @@
-import {
-  View,
-  TextStyle,
-  TextInput as DefaultTextInput,
-  TextInputProps as DefaultTextInputProps,
-  ViewStyle,
-} from "react-native";
-import { useState } from "react";
-
 import { Text } from "@components/Text";
-import { TextVariantsData } from "@constants/Fonts";
 import { Colors } from "@constants/Colors";
+import { TextVariantsData } from "@constants/Fonts";
 import { getFont, scaledStylesheet } from "@utils";
 import { testIds } from "@utils/tests/testIds";
-import { ColorValue } from "react-native";
+import { useState } from "react";
+import {
+  ColorValue,
+  TextInput as DefaultTextInput,
+  TextInputProps as DefaultTextInputProps,
+  TextStyle,
+  View,
+  ViewStyle,
+} from "react-native";
 
 interface TextInputProps extends Omit<DefaultTextInputProps, "multiline"> {
   label?: string;
@@ -24,7 +23,7 @@ interface TextInputProps extends Omit<DefaultTextInputProps, "multiline"> {
   globalColorOverwrite?: ColorValue;
 }
 
-const TextInput = ({
+function TextInput({
   label,
   labelStyle,
   containerStyle,
@@ -33,7 +32,7 @@ const TextInput = ({
   subtextStyle,
   globalColorOverwrite,
   ...props
-}: TextInputProps) => {
+}: TextInputProps) {
   const { variation, size } = TextVariantsData["body-small"];
 
   const [isFocused, setIsFocused] = useState<boolean>(false);
@@ -100,7 +99,7 @@ const TextInput = ({
       ) : null}
     </View>
   );
-};
+}
 
 export default TextInput;
 

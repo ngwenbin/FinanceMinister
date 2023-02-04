@@ -7,7 +7,7 @@ import { NativeStackScreenProps } from "@react-navigation/native-stack";
 
 declare global {
   namespace ReactNavigation {
-    interface RootTabGroupList extends RootStackParamList {}
+    type RootTabGroupList = RootStackParamList;
   }
 }
 

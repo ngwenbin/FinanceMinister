@@ -1,8 +1,5 @@
-import MaterialIcons from "@expo/vector-icons/MaterialIcons";
-import * as SplashScreen from "expo-splash-screen";
-import { useEffect, useState } from "react";
+/* eslint-disable camelcase */
 import {
-  useFonts,
   Inter_100Thin,
   Inter_200ExtraLight,
   Inter_300Light,
@@ -12,15 +9,19 @@ import {
   Inter_700Bold,
   Inter_800ExtraBold,
   Inter_900Black,
+  useFonts,
 } from "@expo-google-fonts/inter";
+import MaterialIcons from "@expo/vector-icons/MaterialIcons";
 import * as NavigationBar from "expo-navigation-bar";
+import * as SplashScreen from "expo-splash-screen";
+import { useEffect, useState } from "react";
 import { Platform } from "react-native";
 
 SplashScreen.preventAutoHideAsync();
 
 const useCachedResources = () => {
   const [isLoadingComplete, setLoadingComplete] = useState(false);
-  let [fontsLoaded] = useFonts({
+  const [fontsLoaded] = useFonts({
     Inter_100Thin,
     Inter_200ExtraLight,
     Inter_300Light,

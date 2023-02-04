@@ -1,8 +1,7 @@
-import { render, screen } from "@testing-library/react-native";
 import "@testing-library/jest-native/extend-expect";
-
-import Badge from "./Badge";
+import { render, screen } from "@testing-library/react-native";
 import { testIds } from "@utils/tests/testIds";
+import Badge from "./Badge";
 
 const badgeContent = "This is a text";
 const badgeLabelTestId = testIds.sharedComponents.badge.badgeLabel;

@@ -1,9 +1,8 @@
-import { render, screen } from "@testing-library/react-native";
-import "@testing-library/jest-native/extend-expect";
-
-import TextInput from "./TextInput";
-import { testIds } from "@utils/tests/testIds";
 import { Colors } from "@constants/Colors";
+import "@testing-library/jest-native/extend-expect";
+import { render, screen } from "@testing-library/react-native";
+import { testIds } from "@utils/tests/testIds";
+import TextInput from "./TextInput";
 
 const textInputLabel = "This is a text label";
 const textSubtext = "This is a subtext";

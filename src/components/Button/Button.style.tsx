@@ -1,6 +1,7 @@
-import { StyleSheet } from "react-native";
+/* eslint-disable import/prefer-default-export */
 import { Colors } from "@constants/Colors";
 import { getFont, normalize } from "@utils";
+import { StyleSheet } from "react-native";
 
 export const buttonStyles = StyleSheet.create({
   buttonContainer: {

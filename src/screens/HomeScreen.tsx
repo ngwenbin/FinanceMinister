@@ -1,13 +1,12 @@
-import { View } from "react-native";
-
 import { Text } from "@components/Text";
 import type { RootTabScreenProps } from "@typings/navigation";
 import { getFont, scaledStylesheet } from "@utils";
+import { View } from "react-native";
 
-const HomeScreen = ({
+function HomeScreen({
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   navigation,
-}: RootTabScreenProps<"home">) => {
+}: RootTabScreenProps<"home">) {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Tab One</Text>
@@ -15,7 +14,7 @@ const HomeScreen = ({
       <Text>Home</Text>
     </View>
   );
-};
+}
 
 const styles = scaledStylesheet({
   container: {

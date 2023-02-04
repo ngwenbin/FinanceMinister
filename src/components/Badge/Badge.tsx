@@ -1,7 +1,7 @@
-import { Text, TextStyle, View, ViewStyle } from "react-native";
 import { Colors } from "@constants/Colors";
 import { getFont } from "@utils";
 import { testIds } from "@utils/tests/testIds";
+import { Text, TextStyle, View, ViewStyle } from "react-native";
 
 type BadgeVariant = "green" | "blue" | "red" | "yellow";
 
@@ -30,7 +30,7 @@ interface BadgeProps {
   rounded?: boolean;
 }
 
-const Badge = ({ label, variant, rounded = true }: BadgeProps) => {
+function Badge({ label, variant, rounded = true }: BadgeProps) {
   return (
     <View
       testID={testIds.sharedComponents.badge.badgeContainer}
@@ -52,6 +52,6 @@ const Badge = ({ label, variant, rounded = true }: BadgeProps) => {
       </Text>
     </View>
   );
-};
+}
 
 export default Badge;

@@ -1,16 +1,15 @@
+import { Button } from "@components/Button";
+import { Text } from "@components/Text";
+import { TextInput } from "@components/TextInput";
+import { Colors } from "@constants/Colors";
+import { useAuth } from "@providers";
+import { RootStackScreenProps } from "@typings/navigation";
+import { normalize, scaledStylesheet } from "@utils";
+import { useEffect, useState } from "react";
 import { Alert, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
-import { Text } from "@components/Text";
-import { normalize, scaledStylesheet } from "@utils";
-import { Button } from "@components/Button";
-import { Colors } from "@constants/Colors";
-import { RootStackScreenProps } from "@typings/navigation";
-import { TextInput } from "@components/TextInput";
-import { useEffect, useState } from "react";
-import { useAuth } from "@providers";
-
-const LoginScreen = ({ navigation }: RootStackScreenProps<"login">) => {
+function LoginScreen({ navigation }: RootStackScreenProps<"login">) {
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const { user, login } = useAuth();
@@ -22,11 +21,11 @@ const LoginScreen = ({ navigation }: RootStackScreenProps<"login">) => {
   }, [user, navigation]);
 
   const onClickLogIn = async () => {
-    console.log("Trying sign in with user: " + email);
+    console.log(`Trying sign in with user: ${email}`);
     try {
       await login(email, password);
     } catch (error) {
-      let err = error as Error;
+      const err = error as Error;
       const errorMessage = `Failed to sign in: ${err.message}`;
       console.error(errorMessage);
       Alert.alert(errorMessage);
@@ -44,7 +43,7 @@ const LoginScreen = ({ navigation }: RootStackScreenProps<"login">) => {
           autoCapitalize="none"
           autoComplete="email"
           autoCorrect={false}
-          blurOnSubmit={true}
+          blurOnSubmit
         />
         <TextInput
           placeholder="Password"
@@ -53,7 +52,7 @@ const LoginScreen = ({ navigation }: RootStackScreenProps<"login">) => {
           autoCapitalize="none"
           autoComplete="password"
           autoCorrect={false}
-          blurOnSubmit={true}
+          blurOnSubmit
         />
       </View>
       <Button
@@ -70,7 +69,7 @@ const LoginScreen = ({ navigation }: RootStackScreenProps<"login">) => {
       </Text>
     </SafeAreaView>
   );
-};
+}
 
 const styles = scaledStylesheet({
   container: {

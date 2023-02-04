@@ -1,9 +1,8 @@
-import { render, screen } from "@testing-library/react-native";
-import "@testing-library/jest-native/extend-expect";
-
-import Text from "./Text";
-import { testIds } from "@utils/tests/testIds";
 import { Colors } from "@constants/Colors";
+import "@testing-library/jest-native/extend-expect";
+import { render, screen } from "@testing-library/react-native";
+import { testIds } from "@utils/tests/testIds";
+import Text from "./Text";
 
 const textContent = "This is a text";
 const textTestId = testIds.sharedComponents.text;

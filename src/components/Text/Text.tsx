@@ -1,13 +1,12 @@
-import {
-  Text as DefaultText,
-  TextProps as DefaultTextProps,
-} from "react-native";
-
+import { Colors } from "@constants/Colors";
 import type { TextVariants } from "@constants/Fonts";
 import { TextVariantsData } from "@constants/Fonts";
 import { getFont } from "@utils";
 import { testIds } from "@utils/tests/testIds";
-import { Colors } from "@constants/Colors";
+import {
+  Text as DefaultText,
+  TextProps as DefaultTextProps,
+} from "react-native";
 
 interface TextProps extends DefaultTextProps {
   children: React.ReactNode;
@@ -15,12 +14,12 @@ interface TextProps extends DefaultTextProps {
   color?: string;
 }
 
-const Text = ({
+function Text({
   children,
   color = Colors.gray[900],
   variant = "body-regular",
   ...props
-}: TextProps) => {
+}: TextProps) {
   const { variation, size, customStyle } = TextVariantsData[variant];
 
   return (
@@ -32,6 +31,6 @@ const Text = ({
       {children}
     </DefaultText>
   );
-};
+}
 
 export default Text;

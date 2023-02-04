@@ -1,18 +1,18 @@
-import {
-  Dimensions,
-  FlatList,
-  View,
-  NativeSyntheticEvent,
-  NativeScrollEvent,
-  FlatListProps,
-  ViewStyle,
-  ColorValue,
-} from "react-native";
-import { memo, useCallback, useRef, useState } from "react";
+import { Colors } from "@constants/Colors";
+import { scaledStylesheet } from "@utils";
 import { ArrayElement } from "@utils/tsHelpers";
 import { isEqual } from "lodash";
-import { scaledStylesheet } from "@utils";
-import { Colors } from "@constants/Colors";
+import { memo, useCallback, useRef, useState } from "react";
+import {
+  ColorValue,
+  Dimensions,
+  FlatList,
+  FlatListProps,
+  NativeScrollEvent,
+  NativeSyntheticEvent,
+  View,
+  ViewStyle,
+} from "react-native";
 
 const { width: windowWidth } = Dimensions.get("window");
 
@@ -37,43 +37,40 @@ interface CarouselProps<T> {
   inActivePaginationColor?: ColorValue;
 }
 
-const Pagination = <T,>({
+function Pagination<T>({
   data,
   index,
   style,
   activeColor = Colors.gray[700],
   inActiveColor = Colors.gray[300],
-}: PaginationProps<T>) => {
+}: PaginationProps<T>) {
   return (
     <View style={styles.pagination} pointerEvents="none">
-      {data.map((_, i) => {
-        return (
-          <View
-            key={i}
-            style={[
-              styles.paginationDot,
-              {
-                backgroundColor: index === i ? activeColor : inActiveColor,
-              },
-              style,
-            ]}
-          />
-        );
-      })}
+      {data.map((_, i) => (
+        <View
+          key={i}
+          style={[
+            styles.paginationDot,
+            {
+              backgroundColor: index === i ? activeColor : inActiveColor,
+            },
+            style,
+          ]}
+        />
+      ))}
     </View>
   );
-};
+}
 
 const memoEqualityCheck = (prev: any, next: any) => isEqual(prev, next);
 
 const Slider = memo(
-  ({ item, renderer }: { item: any; renderer: (data: any) => JSX.Element }) => {
-    return renderer(item);
-  },
+  ({ item, renderer }: { item: any; renderer: (data: any) => JSX.Element }) =>
+    renderer(item),
   memoEqualityCheck
 );
 
-const Carousel = <T,>({
+function Carousel<T>({
   data,
   contentRenderer,
   initialNumToRender = 0,
@@ -84,7 +81,7 @@ const Carousel = <T,>({
   paginationStyle,
   activePaginationColor,
   inActivePaginationColor,
-}: CarouselProps<T>) => {
+}: CarouselProps<T>) {
   const [currIndex, setIndex] = useState(0);
   const indexRef = useRef(currIndex);
   indexRef.current = currIndex;
@@ -152,7 +149,7 @@ const Carousel = <T,>({
       ) : null}
     </View>
   );
-};
+}
 
 export default Carousel;
 

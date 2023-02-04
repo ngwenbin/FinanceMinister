@@ -1,17 +1,15 @@
-import { View, Image } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
-
-import { Text } from "@components/Text";
-import { RootStackScreenProps } from "@typings/navigation";
-import { normalize, scaledStylesheet } from "@utils";
+import sittingReadingImg from "@assets/images/login/sittingreading.png";
 import { Button } from "@components/Button";
+import { Text } from "@components/Text";
 import { Colors } from "@constants/Colors";
 import { useAuth } from "@providers";
+import { RootStackScreenProps } from "@typings/navigation";
+import { normalize, scaledStylesheet } from "@utils";
 import { useEffect } from "react";
+import { Image, View } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
 
-const OnboardingScreen = ({
-  navigation,
-}: RootStackScreenProps<"onboarding">) => {
+function OnboardingScreen({ navigation }: RootStackScreenProps<"onboarding">) {
   const { user } = useAuth();
 
   useEffect(() => {
@@ -26,10 +24,7 @@ const OnboardingScreen = ({
         <Text variant="subhead-large">Welcome to Finance Minister</Text>
       </View>
       <View style={styles.assetContainer}>
-        <Image
-          style={{ width: 300, height: 250 }}
-          source={require("@assets/images/login/sittingreading.png")}
-        />
+        <Image style={{ width: 300, height: 250 }} source={sittingReadingImg} />
       </View>
       <View style={styles.buttonContainer}>
         <Button
@@ -50,13 +45,13 @@ const OnboardingScreen = ({
           color={Colors.gray[400]}
           style={{ textAlign: "center" }}
         >
-          By continuing you agree to Finance Minister's{"\n"}Terms of Service
-          and Privacy Policy
+          By continuing you agree to Finance Minister&apos;s{"\n"}Terms of
+          Service and Privacy Policy
         </Text>
       </View>
     </SafeAreaView>
   );
-};
+}
 
 const styles = scaledStylesheet({
   container: {
